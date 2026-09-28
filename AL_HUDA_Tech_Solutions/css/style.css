@@ -1,0 +1,663 @@
+*{
+    box-sizing: border-box; /*استخدمناه حتى يكون الحجم والارتفاع يشمل للحدود مما يجعل حساب احجام العناصر اسهل واكثر دقه */
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    line-height: 1.6;      /*يحدد المسافه الراسيه مابين العناصر*/
+    color: var(--text-color);
+}
+
+:root{
+    --primary-color:#0066ff;
+    --secondary-color:#0b1f3a;
+    --dark-color:#07182d;
+    --text-color:#1f2937;
+    --light-color:#f5f8fc;
+    --white-color:#ffffff;
+    --border-color:#e5e7eb;
+}
+
+header{
+    background-color: var(--dark-color);
+    color: var(--white-color);
+ 
+}
+nav{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 80px;
+
+    display: flex;
+    align-items: center;  /*مسافه عموديه لايكونوا ملتصقين باعلى*/
+    justify-content: space-between;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+nav a{
+    color: var(--white-color);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav a:hover{
+    color: var(--primary-color);
+}
+/*صوره الشعار*/
+nav > a img {
+    width: 150px;
+    height: 55px;
+    object-fit: contain; /*حافظ على ابعاد الصوره الاصلية */
+    display: block;
+}
+
+.hero{
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+
+    background-image:linear-gradient(
+        rgba(5,15,30,0.75),
+        rgba(5,15,30,0.75)),
+        url("../images/hero_bg.jpg.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat:no-repeat;
+  
+}
+.hero .container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.hero_content{
+    max-width: 700px;
+}
+
+.hero_description{
+    max-width: 650px;
+    font-size:18px;
+    line-height:1.7;
+    margin-bottom:32px;
+}
+
+.btn{
+    
+    padding: 14px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease; /*يجعل التغيير ناعم */
+}
+.btn_primary {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.btn_secondary{
+    color: var(--white-color);
+}
+
+.btn_primary:hover{
+    opacity: 0.85; /*تحدد شفافيه العنصر*/
+}
+.btn_secondary:hover{
+      background-color: var(--white-color);
+      color: var(--dark-color);
+}
+
+/*قسم الخدمات في  الصفحه الرئسيه */
+
+.services-preview{
+    padding: 100px 0 ; 
+    text-align: center;
+}
+
+.section-header{
+    max-width: 750px;
+    margin: 0 auto 50px;
+}
+.section-label{
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+.section-header h2{
+    font-size: 38px;
+    margin-bottom: 18px;
+}
+.services-container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-columns: repeat(4,1fr); 
+    display: grid;
+    gap: 24px; 
+}
+.service-card{
+    padding: 32px 24px;
+    background-color: var(--white-color);
+
+    border: 1px solid  var(--border-color);
+    border-radius: 12px;
+
+    text-align: left; /*النص محاذي لليسار*/
+    box-shadow: 0 8px 25px rgba(0, 0,0 ,0.06);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.10);
+}
+.service-card h3{
+    font-size: 21px;
+    margin-bottom: 14px;
+}
+
+/*  about us تنسيق جزء ال */
+.about-preview{
+    padding: 100px 8%; 
+    background-color: var(--light-color)
+}
+.about-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+.about-content .section-header{
+    text-align: left;
+    max-width: 50%;
+}
+
+/*هنا اضفنا التنسيق الخاص بالرابط */
+.about-preview .section-link{
+    display: inline-block;
+    margin-top: 28px;
+    padding:5px 10px ;
+
+    background-color: var(--primary-color);
+    color: var(--white-color);
+
+    text-decoration: none; /*لازالة الخط الذي تحت الرابط */
+    border-radius: 8px;
+
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+.about-preview .section-link:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+.about-image img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 16px; 
+}
+/*why choose usتنسيق قسم  */
+
+.why-choose-us{
+    padding: 100px 8%;
+}
+.why-choose-us h2{
+    text-align:center;
+    color: var(--dark-color);
+
+}
+.why-choose-us>p{
+    max-width: 750px;
+    margin: 0 auto 40px;
+    text-align: center;  
+}
+.advantages-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+.advantage-card{
+    padding: 28px 22px;
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: transform 0.03s ease , box-shadow 0.03s ease;
+}
+
+.advantage-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.10);
+}
+
+/*تنسيق القسم تواصل  معنا */
+.CTA{
+    padding: 50px 40px;
+    text-align: center;
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    border-radius: 16px;
+   
+}
+.CTA a{
+    display: inline-block;
+    padding: 13px 28px ;
+    margin-top: 20px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition:transform 0.3s ease , box-shadow 0.3s ease ;
+
+}
+.CTA a:hover{
+    transform: translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.20) ;
+}
+
+/*footer تنسيق */
+footer{
+    margin-top: 20px;
+    padding: 50px 20px 30px ;
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    text-align: center;
+    border-radius: 10px;
+}
+
+footer p:last-child{
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    font-size: 14px;
+}
+
+/*about تنسيق صفحة ال  */
+
+.about-hero {
+
+    padding: 90px 8%;
+    text-align: center;
+    background-color:var(--light-color)
+}
+.about-hero h1 {
+
+    font-size: 42px;
+    margin-bottom: 20px;   
+}
+.about-hero p:last-child {
+   
+    font-size: 17px;
+}
+/*about(who we are) تنسيق الجزء الثاني من قسم*/
+
+.about-introduction {
+
+    padding: 80px 8%;
+}
+
+.about-introduction .about-content {
+
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-introduction .about-video video {
+
+    width: 100%;  
+    border-radius: 12px; 
+}
+
+.mission-vision {
+    padding: 80px 8%;
+    background-color:  #f8fafc;
+    text-align: center;
+}
+.mission-vision-container {
+    display: flex;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 40px auto 0;
+}
+
+.mission-card , .vision-card {
+    flex: 1;
+    background-color: var(--white-color);
+    padding: 35px 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.mission-card:hover, .vision-card:hover {
+    transform: translateY(-5px);
+}
+
+.mission-card h3, .vision-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+/*========================= */
+
+@media (max-width: 900px) {
+
+    .about-introduction .about-content {
+
+        flex-direction: column;
+    }
+    .mission-vision-container {
+
+        flex-direction: column;
+    }
+}
+/*للهاتف الصغير*/
+@media (max-width: 600px) {
+
+    .about-hero h1 {
+        font-size: 32px;
+    }
+
+    .about-hero {
+        padding: 70px 6%;
+
+    }
+
+    .about-introduction, .mission-vision {
+
+        padding: 60px 6%;
+    }
+    nav {
+
+        width: 96%;
+        min-height: 65px;
+    }
+
+    nav ul {
+        gap: 8px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    nav > a img {
+
+        width: 90px;
+        height: 45px;
+    }
+}
+
+/*services  تنسيق قسم ال */
+.services-hero{
+     padding: 80px 8%;
+     background-color: var(--light-color);
+     text-align: center;
+}
+.services-list{
+    padding: 80px 8%;
+}
+.our-process{
+    padding: 80px 8%;
+    background-color: var(--light-color)
+   
+}
+.process-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 40px auto 0;
+}
+.process-step{
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background-color: var(--white-color);
+    transition:transform 0.3s ease;
+}
+.process-step:hover{
+    transform:translateY(-5px)
+}
+.process-step h3{
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+.process-step p{
+    line-height: 1.7;
+}
+.service-card {
+    display: flex;
+    flex-direction: column;
+}
+.service-card .btn{
+    margin-top: auto;
+}
+/*تنسيق صفحة المشاريع  */
+
+.projects-hero {
+    padding: 80px 8%;
+    background-color:var(--light-color)
+}
+.featured-projects{
+        padding: 80px 8%; 
+}
+.projects-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:30px;
+    max-width: 1100px;
+    margin: 40px auto 0;
+}
+.project-card{
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background-color: var(--white-color);
+}
+.project-card h3{
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+.project-modal {
+
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+
+    background: white;
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 30px;
+    position: relative;
+}
+.modal-close {
+
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border: none;
+    background: none;
+    font-size: 25px;
+    cursor: pointer;
+
+}
+/* CONTACT */
+
+.contact-hero {
+    padding: 80px 8%;
+    background-color: #f8fafc;
+}
+
+.contact-info,.business-hours,.contact-form {
+    padding: 70px 8%;
+}
+
+.contact-details {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.contact-details div {
+
+    flex: 1;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.contact-details i {
+
+    font-size: 25px;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.contact-details h3 {
+
+    margin-bottom: 8px;
+}
+
+.business-hours table {
+
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto 0;
+    border-collapse: collapse;
+
+}
+.business-hours th,.business-hours td {
+
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+.business-hours th {
+
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.contact-form form {
+    max-width: 700px;
+    margin: 30px auto 0;
+}
+
+.contact-form label {
+    display: block;
+    margin: 15px 0 6px;
+}
+
+.contact-form input,.contact-form textarea {
+
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+
+.contact-form button {
+    margin-top: 20px;
+
+}
+/* LOGIN */
+
+.login-section {
+    padding: 80px 8%;
+}
+
+.login-section form {
+    max-width: 500px;
+    margin: 35px auto 0;
+}
+
+.login-section label {
+    display: block;
+    margin: 15px 0 6px;
+}
+
+.login-section input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+.login-section button {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.login-register {
+    text-align: center;
+    margin-top: 20px;
+}
+.login-register a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+/* Register Page */
+
+.register-section {
+    background: #f4f8fc;
+    padding: 60px 20px;
+}
+.register-section .section-header {
+    width: 500px;
+    margin: 0 auto;
+    padding: 40px;
+    background: white;
+    border: 1px solid #dce4ec;
+    border-radius: 12px;
+}
+.register-section h1 {
+    color: #123b63;
+}
+#registerForm {
+    margin-top: 25px;
+}
+#registerForm label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+    color: #123b63;
+}
+#registerForm input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+#registerForm button {
+    width: 100%;
+    padding: 13px;
+    background:var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+
+
+
